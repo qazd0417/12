@@ -6,19 +6,15 @@
 
 int main(int argc, char *argv[]) {
 	FILE *p;
-	int i;
-	char str[100];
+	char c;
 		
-	p = fopen("sample.txt", "w");
+	p = fopen("sample.txt", "r");
 	if(p==NULL)
 		return -1;
 	
-	for(i=0;i<3;i++)
-	{
-		printf("input a word: ");
-		scanf("%s", str);
-		fprintf(p, "%s\n", str);
-			
+	while ((c=fgetc(p)) !=EOF){
+		printf("%c",c);
+	
 	}
 	fclose(p);
 	return 0;
